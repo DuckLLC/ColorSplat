@@ -1,16 +1,25 @@
 main: com.plugin.ColorSplat.Main
-config: config
 name: ColorSplat
 version: 0.1
 api-version: '1.17'
+author: Raddelgo14
 
 #All Commands
 commands:
+  # /startSplat Command Definition
   startsplat:
     description: 'Starts the Color Splat Game'
     usage: '/<command>'
     permssion: ColorSplat.start
+
+  # /endSplat Command Definition
   endSplat:
     description: 'Ends the Color Splat Game'
+    usage: '/<command>'
+    permssion: ColorSplat.end
+
+  # /reload command Definition
+  reload:
+    description: 'Reloads the Color Splat Config'
     usage: '/<command>'
     permssion: ColorSplat.end

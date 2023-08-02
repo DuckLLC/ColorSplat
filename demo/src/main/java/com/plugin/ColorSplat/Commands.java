@@ -10,7 +10,7 @@ public class Commands implements CommandExecutor {
     public static int game = 0;
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if(cmd.getName().equalsIgnoreCase("startsplat")){
+        if(cmd.getName().equalsIgnoreCase("startSplat")){
             if (sender instanceof Player) {
                 game = 1;
                 sender.sendMessage("ColorSplat: Game Started");

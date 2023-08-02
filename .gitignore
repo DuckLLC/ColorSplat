@@ -1,2 +1,13 @@
 /.vscode
 /g.code-workspace
+demo/target/ColorSplat-0.1.jar
+demo/target/ColorSplat-1.0-SNAPSHOT.jar
+demo/target/classes/config.yml
+demo/target/classes/plugin.yml
+demo/target/classes/com/plugin/ColorSplat/Commands.class
+demo/target/classes/com/plugin/ColorSplat/Main.class
+demo/target/maven-archiver/pom.properties
+demo/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst
+demo/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+demo/target/ColorSplat-0.2-BETA1.jar
+demo/target

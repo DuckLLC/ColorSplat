@@ -2,7 +2,12 @@ package com.plugin.ColorSplat;
 
 
 import org.bukkit.plugin.java.JavaPlugin;
+
+import net.md_5.bungee.api.ChatColor;
+
 import org.bukkit.Material;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,18 +17,19 @@ import org.bukkit.event.player.PlayerMoveEvent;
 
 public class Main extends JavaPlugin implements Listener{
 
-    FileConfiguration config = this.getConfig();
+    FileConfiguration config;
 
 
     @Override
     public void onEnable() {
         //Incase it does not exsit
-        saveDefaultConfig();
         reloadConfig();
 
         getServer().getPluginManager().registerEvents(this, this);
         getCommand("endSplat").setExecutor(new Commands());
         getCommand("startSplat").setExecutor(new Commands());
+        getCommand("reload").setExecutor(this);
+        // Tells user that the plugin is enabled
         getLogger().info("ColorSplat: Enabled Plugin");
 
     }
@@ -32,6 +38,8 @@ public class Main extends JavaPlugin implements Listener{
         saveConfig();
         getLogger().info("ColorSplat: Disabled Plugin");
     }
+
+
     @EventHandler
     public void onPlayerMove(PlayerMoveEvent event) {
         // Get the player's location
@@ -68,5 +76,24 @@ public class Main extends JavaPlugin implements Listener{
                 }
             }
         }
+    }
+    @EventHandler
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (cmd.getName().equalsIgnoreCase("reload")){
+            sender.sendMessage(ChatColor.GREEN + "ColorSplat: Reloading Config");
+            reloadConfig();
+            sender.sendMessage(ChatColor.GREEN + "ColorSplat: Reloaded Config");
+        }
+        return false;
+    }
+
+    @Override
+    public void reloadConfig() {
+        super.reloadConfig();
+
+        saveDefaultConfig();
+        config = getConfig();
+        config.options().copyDefaults(true);
+        saveConfig();
     }
 }
