@@ -11,3 +11,11 @@ A plugin that adds a new Mini Game!
 - Restart server
 - Use /startsplat
 - Enjoy!
+
+# Credits
+
+- Raddelgo14 (@DuckLLC) - Lead Dev / Creator
+
+# Building from source
+
+
